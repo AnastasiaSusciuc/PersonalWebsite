@@ -1,0 +1,247 @@
+$ bundle exec jekyll serve
+
+Examples for index.html:
+How to add a link?
+    [Bear Blog](https://bearblog.dev/)
+How to use italic/ bold?
+     *"a blogging platform where words matter most"*
+    **Stop worrying about the style, focus on your writing.**
+
+
+- Looks great on *any* device
+- Tiny, optimized, and awesome pages
+- No trackers, ads, or scripts, *did I mention minimal already?*
+- Auto light and dark themes
+- Tag support, to filter blog pages
+- Quick, *15 minute* setup
+- Gallery view for your images
+- Code highlighting
+
+
+Blog posts:
+1.
+    ---
+    layout: post
+    title:  "The story of Rito Kids"
+    date:   2024-10-20
+    tags: [fiction]
+    ---
+
+    The air was slightly breezy, a noisy fan moving it about rather unsuccessfully in the other room. A constant buzz of the crickets in the night was interrtupted by dog howls. She lay in bed, eyes closed, observing all the sounds. Noticing. Remembering.
+
+    >“Just as you first saw it. ”
+
+    She opened her eyes, satisfied. She sat up and looked at the curtains, silk sheets waving about in the gentle breeze of the open window. They were still before, she remembered. No worries, they will be still again.
+
+    She stood up, and pulled out a wet wipe. Again closing her eyes she replayed everything that had happened. Objects she touched, places she stood in. She went backwards, retracing her steps, working methodically.
+
+    >“No signs. Nothing amiss.”
+
+    She was never there. As she stepped out of the window she looked at Nisha on the bed, as though sleeping. Tomorrow morning the maid will ring the bell at 0600, and again at 0603. Nisha will not open the door. The milkman would leave the milk by her doorstep at 0700, as he does. Tomorrow morning Nisha will not go to office. She will get two messages around noon from her boss asking about the code review, which she won’t reply to. Tomorrow evening she will get a voicemail from her mother, wondering why Nisha didn’t call her that morning. By tomorrow night she would have 7 missed calls and 12 unresponded messages.
+
+    By the time she’s found that would only go up to 13 calls and 17 messages.
+
+    She closed the window gently, and watched the curtains grow still. Outside the air was chilly, and a dog howl chorus had just started. She slipped her hand into her pocket and found the lock of hair. As she rolled it around her fingers she took a deep breath of the clean sharp air.
+
+    >And she realised she still felt empty and bored.
+2.
+    ---
+    layout: post
+    title: From Forestry CMS
+    subtitle: A key word that I was missing all along
+    date: 2022-05-20 18:30:00 +0000
+    tags:
+    - general
+    - fiction
+
+    ---
+    So turns out that there _is_ a way to write via the web!
+
+    All along I thought the _one pain point_ of having a `GitHub + Jekyll + GitHub Pages` blog was the creation of new content had to happen through a desktop, with access to terminal. We have to copy the frontmatter, write the post, and commit the post to git. Not _very_ painful, but a little inconvenient.
+
+    So much so that I went looking for other blog systems that had a webeditor in place. Better than not having any editor right? Ideally I would have a mobile app to do this (a man can wish).
+
+    The key word I was missing all along was CMS. Content Management System.
+
+    Because absolutely none of the places that teach you to set up a static website/blog hosted on GitHub and talk about the ongoing content generation effort! They seem to stop at the one time creation of blog for all they care. Or is it that the expectation of most of the target audience being developers blinds them to some of the papercuts of writing via a text editor (and formatting, and live previewing to see if it looks good.... are they paper cuts still?) because hey, you are already familiar with git, this works.
+
+    > [to be clear, you don't _need_ to do anything locally. \[...\]](https://news.ycombinator.com/item?id=23312339&p=2#23316450 "It's possible to use static blogs without touching your site")
+
+    Thanks to `masukomi` from Hacker News I am now made aware of [Forestry](https://forestry.io/ "It is a CMS"). It is called a CMS guys. And adding that keyword threw up a bunch of other options as well. But Forestry is a beauty, took me just minutes to setup it up. I am ignoring a couple hours spent debugging an issue with my Jekyll setup that prevented the Forestry systems from building my site for Auto Preview.
+
+    Actually better make note of that.
+
+    ***
+
+    If your build (or instant preview server) is failing due to the folowing error:
+
+        ERROR: YOUR SITE COULD NOT BE BUILT:
+        ------------------------------------
+        Invalid date '<%= Time.now.strftime('%Y-%m-%d %H:%M:%S %z') %>': Document 'vendor/bundle/ruby/2.7.0/gems/jekyll-3.9.2/lib/site_template/_posts/0000-00-00-welcome-to-jekyll.markdown.erb' does not have a valid date in the YAML front matter.
+
+    Then you probably have not excluded the vendor directory from building. Because it is recommended to have all your gem installs in your local directory (which I wasn't doing until Forestry) but [Jekyll is going to try, and fail, to run negative test cases](https://github.com/jekyll/jekyll/issues/2938#issuecomment-131456094) within itself.
+
+    So the solution is to [exclude the vendor directory in your config file](https://github.com/jekyll/jekyll/issues/2938#issuecomment-56237068).
+
+    ***
+
+    Where were we?
+
+    Yes, I now have a pretty neat CMS that I can access via web to make blog posts. I used said CMS for writing this blog post and can confirm it is pretty neat.
+
+3. ---
+   layout: design-post
+   title:  "Vector Logos"
+   date:   2021-06-01 21:21:21 +0530
+   tags: [design]
+   ---
+
+   Some vector logos I have created, in various styles. I use the first one personally, and you may have seen some of the others in the wild.
+
+   I use [InkScape](https://inkscape.org) to make these, and it typically takes a couple hours. [Logos By Nick](https://www.youtube.com/channel/UCEQXp_fcqwPcqrzNtWJ1w9w) is an awesome channel if you ever want to do these kind of stuff yourself.
+
+   {% include image-gallery.html folder="/design_assets" %}
+
+4. ---
+   layout: post
+   title:  "You want to build a Recommender System in Prod"
+   subtitle:  "(You haven’t done that before)"
+   date:   2022-05-05 21:21:21 +0530
+   tags: [general]
+   redirect_from:
+     - general/recommender-system-in-prod
+   ---
+
+
+   ```
+   > be you
+   > have participated in kaggle recommender system competitions
+   > datascientist.mp3
+   > bossman says to recommend stuff for noobs
+   > because they can’t search properly or whatever
+   > ok bossman
+   > no defined problem statement?
+   > no csv?
+   > no accuracy and mae test suite?
+   > no leaderboard?
+
+   what do /b/?
+   ```
+
+
+
+   _Haha, noob. Ok let’s do this._
+
+
+
+   * * *
+
+
+
+   ### \> Frame problem statement
+
+   You are an adult now. Frame the problem statement yourself. Just ask a bunch of questions and keep reducing scope. If you can visualise the mathematical formulation you have arrived. 
+
+   Congratulations. Wasn’t so hard, was it.
+
+
+
+   ### \> Build framework
+
+   Setup your Jupyter Notebook so you can iterate fast. Build a first model, maybe a random model that spits out random predictions. Is this a good baseline? Don’t ask such stupid questions, it isn’t. But this will help you build an end to end training and testing pipeline. The train-test split, pre-process placeholders, test suite. 
+
+   Build now so you don’t need to keep building later. 
+
+
+
+   ### \> Establish baseline
+
+   You have the problem statement yeah? There is gotta be some stupid simple stuff that is better than random predictions. Yes, heuristics. Pick one, or some. Get test results. Now this is the one to beat. 
+
+
+
+   ### \> Metrics and reward function
+
+   The very next thing is to establish a good metric of evaluation. Actually this should be the second point of order. But we are here, better late than later I guess.
+
+   This is going to be your leaderboard basically. And it should correlate _highly_ with whatever problem statement you are solving for. Take some time here. 
+
+   At least 2 hours. Minimum.
+
+
+
+   ### \> Simple algorithms first
+
+   Or SAF for short. Heard of Multi Armed Bandits? Try that first. Shit’s amazing. Probably all that you’ll need.
+
+
+
+   * * *
+
+   _With me so far?_ 
+
+   _All this was within Jupyter. But predictions happen in the world outside, so we got stuff to do. Strap in. We are going outside._
+
+   * * *
+
+
+
+   ### \> Prediction Service setup
+
+   How you gonna do the predictions huh? You need an API or some shit. Setup a dummy service that takes in request (a user id maybe) and responds with predictions. 
+
+   Find something that works with python scripts. Why? Because it is easy to convert a Jupyter Notebook to an executable script but what do I know, write in Cython for all I care. 
+
+   But code well. Classes and shit. You are in production environment now. Act like it.
+
+
+
+   ### \> Feature store (low latency cache)
+
+   A lot of concurrent requests (QPS) and low latency requests means optimisations. Use caches and feature stores to save model weights and intermediate products. CosmosDB, Aerospike, just pick one and run with it. You know how dictionary look-ups are very fast? Same concept. Prefer lookups to on-demand processing.
+
+   Keep the actual prediction service is as light as possible. Maybe it just does a dot product of vectors. Maybe you found out about ONNX runtimes and used that. 
+
+   Good job!
+
+
+
+   ### \> Logs, health metrics and alerting
+
+   Stuff breaks. Production stuff breaks hard. You need to know when it breaks. Log stuff. Model health, pre-processing data health, maybe every request and response (RRLogs). Actually, definitely do that. ELK, Kibana, or some such crap. Then setup alerts on it. So when a bunch of predictions are throwing NULLs you will be on top of it in 1 hour rather than the product folks telling you about it after 3 days.
+
+   While you are at it also set up some alerting on the infrastructure. Running at 95% memory capacity or 5% CPU capacity, both are bad. Or your Celery queue is choked to the end of times. Bad.
+
+   Keep your eyes on those numbers. Better, push those numbers (Prometheus) to a dashboard (Grafana) and set up alerts (PagerDuty). 
+
+   Rest those eyes until needed.
+
+
+
+   ### \> Performance metrics
+
+   Fancy graphs that product people see to judge how good your recommender system is working. Should contain your model performance metrics and related product metrics (Retention, Engagement, Churn, what have you). Dunno what to use? Use Metabase. If someone asks why just say I told you to.
+
+   If you build this to be sufficiently standalone so all your future models can plug into it, well done, you are a good engineer.
+
+
+
+   ### \> Model re-training and pipelines
+
+   Models get stale. Underlying data may no longer be relevant. You gotta re-train your models. Automate that shit. 
+
+   Airflow will let you schedule tasks and dependencies in what it calls DAGs. Which are just Graphs which have a particular Direction and are Acyclic. Use them. It is fancy cron and you can do some fancy cron stuff with it.
+
+
+
+   * * *
+
+
+
+   _Congratulations. Your recommender system is now in production._ 
+
+   _Soon “people” will come to you with suggestions and ideas on how to make recommendations better. They will say it is a small change, let us see how it performs._
+
+   _Now you are thinking about an experimentation framework. Hypothesis testing. Model Controller._
+
+   _Until then..._
