@@ -1,1 +1,1 @@
-A blog site based on Jekyll
+A blog site based on Jekyll.
